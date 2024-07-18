@@ -1,43 +1,21 @@
-// type AddFn = (a: number, b: number) => number;
-interface AddFn {
-  (a: number, b: number): number;
+// * 제네릭
+
+// const names = ["Dong", "Pyo"];
+// 위 코드를 제네릭으로 나타내면
+const names: Array<string> = [];
+
+const promise: Promise<string> = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('This is done!');
+    reject('An error occurred');
+  }, 200);
+});
+
+// * 제네릭 함수 생성하기
+function merge<T, U>(objA: T, objB: U) {
+  return Object.assign({}, objA, objB);
 }
 
-const add1: AddFn = (n1, n2) => {
-  return n1 + n2;
-};
-
-interface Named {
-  readonly name?: string;
-  outputName?: string;
-}
-
-interface Greetable extends Named {
-  greet(phrase: string): void;
-}
-
-class Person implements Greetable {
-  name?: string;
-  age = 30;
-
-  constructor(n?: string) {
-    if (n) {
-      this.name = n;
-    }
-  }
-
-  greet(phrase: string) {
-    if (this.name) {
-      console.log(phrase + ' ' + this.name);
-    } else {
-      console.log('Hi!');
-    }
-  }
-}
-
-let user1: Greetable;
-
-user1 = new Person();
-
-user1.greet('Hi there - I am');
-console.log(user1);
+const mergedObj = merge({ name: 'Dong', hobbies: ['Sports'] }, { age: 30 });
+console.log(mergedObj.age);
+console.log(mergedObj.name);

@@ -1,26 +1,15 @@
 "use strict";
-var add1 = function (n1, n2) {
-    return n1 + n2;
-};
-var Person = (function () {
-    function Person(n) {
-        this.age = 30;
-        if (n) {
-            this.name = n;
-        }
-    }
-    Person.prototype.greet = function (phrase) {
-        if (this.name) {
-            console.log(phrase + ' ' + this.name);
-        }
-        else {
-            console.log('Hi!');
-        }
-    };
-    return Person;
-}());
-var user1;
-user1 = new Person();
-user1.greet('Hi there - I am');
-console.log(user1);
+var names = [];
+var promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        resolve('This is done!');
+        reject('An error occurred');
+    }, 200);
+});
+function merge(objA, objB) {
+    return Object.assign({}, objA, objB);
+}
+var mergedObj = merge({ name: 'Dong', hobbies: ['Sports'] }, { age: 30 });
+console.log(mergedObj.age);
+console.log(mergedObj.name);
 //# sourceMappingURL=app.js.map
