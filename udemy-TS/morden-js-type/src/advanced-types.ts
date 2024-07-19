@@ -23,7 +23,7 @@ type Numeric = number | boolean;
 type Universal = Combinable & Numeric;
 
 // * 타입가드
-function add2(a: Combinable, b: Combinable) {
+function add3(a: Combinable, b: Combinable) {
   if (typeof a === 'string' || typeof b === 'string') {
     return a.toString() + b.toString();
   }
