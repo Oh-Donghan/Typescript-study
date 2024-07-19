@@ -1,25 +1,24 @@
 "use strict";
-var add1 = function (n1, n2) {
+const add1 = (n1, n2) => {
     return n1 + n2;
 };
-var Person = (function () {
-    function Person(n) {
+class Person {
+    constructor(n) {
         this.age = 30;
         if (n) {
             this.name = n;
         }
     }
-    Person.prototype.greet = function (phrase) {
+    greet(phrase) {
         if (this.name) {
             console.log(phrase + ' ' + this.name);
         }
         else {
             console.log('Hi!');
         }
-    };
-    return Person;
-}());
-var user1;
+    }
+}
+let user1;
 user1 = new Person();
 user1.greet('Hi there - I am');
 console.log(user1);

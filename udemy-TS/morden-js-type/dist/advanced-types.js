@@ -1,5 +1,5 @@
 "use strict";
-var e1 = {
+const e1 = {
     name: 'Dong',
     privileges: ['create-server'],
     startDate: new Date(),
@@ -21,27 +21,21 @@ function printEmployeeInformation(emp) {
 }
 printEmployeeInformation(e1);
 printEmployeeInformation({ name: 'Oh', startDate: new Date() });
-var Car = (function () {
-    function Car() {
-    }
-    Car.prototype.drive = function () {
+class Car {
+    drive() {
         console.log('Driving...');
-    };
-    return Car;
-}());
-var Truck = (function () {
-    function Truck() {
     }
-    Truck.prototype.drive = function () {
+}
+class Truck {
+    drive() {
         console.log('Driving a truck...');
-    };
-    Truck.prototype.loadCargo = function (amount) {
+    }
+    loadCargo(amount) {
         console.log('Loading cargo ...' + amount);
-    };
-    return Truck;
-}());
-var v1 = new Car();
-var v2 = new Truck();
+    }
+}
+const v1 = new Car();
+const v2 = new Truck();
 function useVehicle(vehicle) {
     vehicle.drive();
     if (vehicle instanceof Truck) {
@@ -51,7 +45,7 @@ function useVehicle(vehicle) {
 useVehicle(v1);
 useVehicle(v2);
 function moveAnimal(animal) {
-    var speed;
+    let speed;
     switch (animal.type) {
         case 'bird':
             speed = animal.flyingSpeed;
@@ -62,20 +56,20 @@ function moveAnimal(animal) {
     console.log('Moving at speed: ' + speed);
 }
 moveAnimal({ type: 'bird', flyingSpeed: 10 });
-var userInputElement = document.getElementById('user-input');
+const userInputElement = document.getElementById('user-input');
 if (userInputElement) {
     userInputElement.value = 'Hi there';
 }
-var errorBag = {
+const errorBag = {
     email: 'Not a valid email!',
     username: 'Must start with a capital character!',
     greeting: 'Hello!',
 };
-var fetchedUserData = {
+const fetchedUserData = {
     id: 'u1',
     name: 'Dong',
 };
-var userInput = '';
-var storedData = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
+const userInput = '';
+const storedData = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
 console.log(storedData);
 //# sourceMappingURL=advanced-types.js.map

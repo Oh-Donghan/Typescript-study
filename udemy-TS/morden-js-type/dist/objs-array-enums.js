@@ -6,7 +6,7 @@ var Role;
     Role[Role["AUTHOR"] = 2] = "AUTHOR";
 })(Role || (Role = {}));
 ;
-var person1 = {
+const person1 = {
     name: 'Dong',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
@@ -15,11 +15,10 @@ var person1 = {
 if (person1.role === Role.AUTHOR) {
     console.log('is admin');
 }
-var favoriteActivities;
+let favoriteActivities;
 favoriteActivities = ['Sports'];
 console.log(person1.name);
-for (var _i = 0, _a = person1.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
+for (const hobby of person1.hobbies) {
     console.log(hobby);
 }
 //# sourceMappingURL=objs-array-enums.js.map

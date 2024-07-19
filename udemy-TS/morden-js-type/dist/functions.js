@@ -7,13 +7,13 @@ function printResult(num) {
 }
 printResult(add2(5, 12));
 function addAndHandle(n1, n2, cb) {
-    var result = n1 + n2;
+    const result = n1 + n2;
     cb(result);
 }
-addAndHandle(10, 20, function (result) {
+addAndHandle(10, 20, (result) => {
     console.log(result);
 });
-var combineValues;
+let combineValues;
 combineValues = add2;
 console.log(combineValues(8, 8));
 //# sourceMappingURL=functions.js.map
